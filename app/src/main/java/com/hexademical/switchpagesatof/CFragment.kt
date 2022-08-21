@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import com.hexademical.switchpagesatof.databinding.FragmentBBinding
 import com.hexademical.switchpagesatof.databinding.FragmentCBinding
 
@@ -23,7 +24,7 @@ class CFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private var _binding: FragmentCBinding? = null
-    private val binding = _binding
+    private val binding get() = _binding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,12 +39,22 @@ class CFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentCBinding.inflate(inflater, container, false)
-        return inflater.inflate(R.layout.fragment_c, container, false)
+        return _binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         // @ Todo
+
+        binding?.btnSwitchToB?.setOnClickListener {
+            val action = CFragmentDirections.actionCFragment2ToBFragment2()
+            view.findNavController().navigate(action)
+        }
+
+        binding?.btnSwitchToD?.setOnClickListener {
+            val action = CFragmentDirections.actionCFragment2ToDFragment()
+            view.findNavController().navigate(action)
+        }
     }
 
     override fun onDestroyView() {

@@ -33,5 +33,44 @@
         <action
             android:id="@+id/action_CFragment2_to_BFragment2"
             app:destination="@id/BFragment2" />
+        <action
+            android:id="@+id/action_CFragment2_to_DFragment"
+            app:destination="@id/DFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/DFragment"
+        android:name="com.hexademical.switchpagesatof.DFragment"
+        android:label="fragment_d"
+        tools:layout="@layout/fragment_d" >
+        <action
+            android:id="@+id/action_DFragment_to_CFragment2"
+            app:destination="@id/CFragment2" />
+        <action
+            android:id="@+id/action_DFragment_to_EFragment"
+            app:destination="@id/EFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/EFragment"
+        android:name="com.hexademical.switchpagesatof.EFragment"
+        android:label="fragment_e"
+        tools:layout="@layout/fragment_e" >
+        <action
+            android:id="@+id/action_EFragment_to_DFragment"
+            app:destination="@id/DFragment" />
+        <action
+            android:id="@+id/action_EFragment_to_FFragment"
+            app:destination="@id/FFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/FFragment"
+        android:name="com.hexademical.switchpagesatof.FFragment"
+        android:label="fragment_f"
+        tools:layout="@layout/fragment_f" >
+        <action
+            android:id="@+id/action_FFragment_to_AFragment2"
+            app:destination="@id/AFragment2" />
+        <action
+            android:id="@+id/action_FFragment_to_EFragment"
+            app:destination="@id/EFragment" />
     </fragment>
 </navigation>

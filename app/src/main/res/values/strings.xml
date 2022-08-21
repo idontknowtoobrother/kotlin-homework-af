@@ -9,4 +9,9 @@
     <string name="switch_to_a_label">Swtich to A</string>
     <string name="c_letter_label">C</string>
     <string name="switch_to_d_label">Switch to D</string>
+    <string name="d_letter_label">D</string>
+    <string name="switch_to_e_label">Swtich to E</string>
+    <string name="e_letter_label">E</string>
+    <string name="switch_to_f_label">Switch to F</string>
+    <string name="f_letter_label">F</string>
 </resources>

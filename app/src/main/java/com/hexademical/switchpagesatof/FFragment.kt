@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
-import com.hexademical.switchpagesatof.databinding.FragmentABinding
+import com.hexademical.switchpagesatof.databinding.FragmentFBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -15,15 +15,14 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [AFragment.newInstance] factory method to
+ * Use the [FFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class AFragment : Fragment() {
+class FFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-
-    private var _binding: FragmentABinding? = null
+    private var _binding: FragmentFBinding? = null
     private val binding get() = _binding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,17 +37,25 @@ class AFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentABinding.inflate(inflater, container, false)
+        _binding = FragmentFBinding.inflate(inflater, container, false)
         return _binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         // @ Todo
-        binding?.btnSwitchToB?.setOnClickListener {
-            val action = AFragmentDirections.actionAFragment2ToBFragment2()
+
+        binding?.btnSwitchToA?.setOnClickListener {
+            val action = FFragmentDirections.actionFFragmentToAFragment2()
             view.findNavController().navigate(action)
         }
+
+        binding?.btnSwitchToE?.setOnClickListener {
+            val action = FFragmentDirections.actionFFragmentToEFragment()
+            view.findNavController().navigate(action)
+        }
+
     }
 
     override fun onDestroyView() {
@@ -63,12 +70,12 @@ class AFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment AFragment.
+         * @return A new instance of fragment FFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            AFragment().apply {
+            FFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
