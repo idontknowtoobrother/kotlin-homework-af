@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">SwitchPagesAtoF</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="a_letter_label">A</string>
+    <string name="switch_to_b_label">Switch to B</string>
+    <string name="b_letter_label">B</string>
+    <string name="switch_to_c_label">Swtich to C</string>
+    <string name="switch_to_a_label">Swtich to A</string>
+    <string name="c_letter_label">C</string>
+    <string name="switch_to_d_label">Switch to D</string>
 </resources>
